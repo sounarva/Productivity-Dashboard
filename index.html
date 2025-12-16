@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section class="allElems">
+            <div id="0" class="elem todo">
+                <img src="./images/image-1.avif" alt="" loading="lazy">
+                <h2>Todo <br> List</h2>
+            </div>
+            <div id="1" class="elem dailyPlanner">
+                <img src="./images/image-2.avif" alt="" loading="lazy">
+                <h2>Daily <br> Planner</h2>
+            </div>
+            <div id="2" class="elem motivationSec">
+                <img src="./images/image-3.avif" alt="" loading="lazy">
+                <h2>Motivation <br> Quotes</h2>
+            </div>
+            <div id="3" class="elem pomodoro">
+                <img src="./images/image-4.avif" alt="" loading="lazy">
+                <h2>Pomodoro <br> Timer</h2>
+            </div>
+            <div id="4" class="elem goals">
+                <img src="./images/image-5.avif" alt="" loading="lazy">
+                <h2>Daily <br> Goals</h2>
+            </div>
+        </section>
+
+        <section id="0" class="taskSection todo">
+            <h2>Work Execution Plan</h2>
+            <button id="0" class="closePanel">Close</button>
+            <div class="taskPanel">
+                <div class="left">
+                    <form autocomplete="off">
+                        <input type="text" placeholder="Task Title" id="taskTitle">
+                        <textarea name="" id="taskDescription" placeholder="task description" rows="10"
+                            cols="30"></textarea>
+                        <div class="important-sec">
+                            <input type="checkbox" name="" id="impBtn">
+                            <label for="impBtn">Mark as important</label>
+                        </div>
+                        <button id="addTaskBtn">Add Task</button>
+                    </form>
+                </div>
+                <div class="right">
+
+                </div>
+            </div>
+        </section>
+        <section id="1" class="taskSection dailyPlanner">
+            <h2>Work Execution Plan</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus beatae voluptate exercitationem
+                autem hic consequuntur nemo veniam architecto incidunt distinctio.</p>
+        </section>
+        <section id="2" class="taskSection motivationSec">
+            <h2>Work Execution Plan</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus beatae voluptate exercitationem
+                autem hic consequuntur nemo veniam architecto incidunt distinctio.</p>
+        </section>
+        <section id="3" class="taskSection pomodoro">
+            <h2>Work Execution Plan</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus beatae voluptate exercitationem
+                autem hic consequuntur nemo veniam architecto incidunt distinctio.</p>
+        </section>
+        <section id="4" class="taskSection goals">
+            <h2>Work Execution Plan</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus beatae voluptate exercitationem
+                autem hic consequuntur nemo veniam architecto incidunt distinctio.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
