@@ -61,6 +61,8 @@ main {
     background-color: var(--primary-color);
 }
 
+/* Todo List */
+
 .allElems {
     height: 100%;
     width: 100%;
@@ -145,6 +147,7 @@ main {
     border-radius: 0.5rem;
     cursor: pointer;
     background-color: rgb(221, 12, 12);
+    color: var(--quaternary-color);
     border: none;
     transition: all 0.3s ease;
 }
@@ -341,4 +344,65 @@ main {
 
 .taskPanel .right .task .taskActions button:active {
     transform: scale(0.95);
+}
+
+/* Daily Planner */
+
+.daily-planner-panel{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 85%;
+    padding: var(--padding-md);
+    background-color: var(--tertiary-color);
+    border-radius: 0.5rem;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.dailyPlanner h4{
+    font-family: font2;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: var(--padding-sm);
+}
+
+.daily-planner-panel::-webkit-scrollbar{
+    display: none;
+}
+
+.daily-planner-panel .plan{
+    display: flex;
+    align-items: center;
+    width: 49%;
+    position: relative;
+    margin-bottom: var(--padding-sm);
+}
+
+.daily-planner-panel .plan input{
+    width: 100%;
+    white-space: wrap;
+    padding: 0 var(--padding-lg);
+    padding-top: var(--padding-lg);
+    padding-bottom: var(--padding-sm);
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+    font-family: font1;
+    font-size: var(--font-size-md);
+    letter-spacing: 2px;
+    border-radius: 0.5rem;
+}
+
+.daily-planner-panel .plan h4{
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    font-family: font3;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 2px;
 }
