@@ -406,3 +406,103 @@ main {
     font-weight: var(--font-weight-bold);
     letter-spacing: 2px;
 }
+
+/* Motivational Quotes */
+.taskSection.motivationalSec{
+    position: relative;
+}
+
+.motivational-fullPage{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.motivational-fullPage .motivational-panel{
+    width: 50%;
+    background-color: var(--quaternary-color);
+    border-radius: 0.5rem;
+    padding: var(--padding-md);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.motivational-fullPage .motivational-panel::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: var(--tertiary-color);
+    z-index: 9;
+    scale: 1.05;
+    border-radius: 0.5rem;
+    padding: var(--padding-sm);
+    filter: blur(150px);
+
+}
+
+.motivational-fullPage .motivational-panel .motivational-wrapper{
+    position: absolute;
+    z-index: 10;
+    min-height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    padding: var(--padding-sm);
+}
+
+.motivational-fullPage .motivational-panel .motivational-wrapper img{
+    position: absolute;
+    top: 4%;
+    right: 5%;
+    opacity: 0.7;
+    scale: 1.2;
+}
+
+.motivation-1 h4{
+    font-family: font2;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: fit-content;
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: 3rem;
+}
+
+.motivation-2 h3{
+    font-family: font3;
+    font-size: var(--font-size-lg);
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    white-space: wrap;
+    padding: var(--padding-md);
+    color: transparent;
+    background: linear-gradient(to right, var(--tertiary-color), var(--quaternary-color));
+    -webkit-background-clip: text;
+    margin-top: var(--padding-md);
+}
+
+.motivation-3{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: var(--padding-sm);
+}
+
+.motivation-3 h4{
+    font-family: font3;
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: fit-content;
+    background-color: var(--quaternary-color);
+    color: var(--primary-color);
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: 0.5rem;
+}

@@ -100,8 +100,7 @@ function getToday() { // -- get today's date
 }
 
 function setDailyPlanner() { // -- set daily planner
-    let today = getToday();
-    document.querySelector("#currentDate").innerHTML = today
+    let today = document.querySelector("#currentDate").innerHTML
 
 
     setInterval(() => {
@@ -140,3 +139,24 @@ function setDailyPlanner() { // -- set daily planner
 }
 
 setDailyPlanner()
+
+// Motivational Quote
+function motivationalQuote() {
+    const motivationalQuote = document.querySelector(".motivation-2 h3")
+    const motivationalAuthor = document.querySelector(".motivation-3 h4")
+
+    async function fetchQuote() {
+        let quote = await fetch("https://api.api-ninjas.com/v2/randomquotes?categories=success,wisdom", {
+            headers: {
+                "X-Api-Key": "zpxwiItNuZzJdDu6Of9RrA==xGbxLPUCuaJSbB1F"
+            }
+        })
+        quote = await quote.json()
+        motivationalQuote.innerHTML = quote[0].quote
+        motivationalAuthor.innerHTML = "-&nbsp;&nbsp;&nbsp;" + quote[0].author
+    }
+
+    fetchQuote()
+}
+
+motivationalQuote()
