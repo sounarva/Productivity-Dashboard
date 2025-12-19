@@ -20,6 +20,8 @@
     --secondary-color: #F5E7C6;
     --tertiary-color: #FF6D1F;
     --quaternary-color: #FAF3E1;
+    --linear-color: rgb(232, 61, 27);
+    --success-color: #139652;
 
     /* Paddings */
     --padding-sm: 1rem;
@@ -35,6 +37,7 @@
     --font-size-sm: 1rem;
     --font-size-md: 1.5rem;
     --font-size-lg: 2rem;
+    --font-size-xl: 8rem;
 
     /* Font Weights */
     --font-weight-light: 300;
@@ -266,7 +269,7 @@ main {
     scroll-behavior: smooth;
 }
 
-.taskPanel .right::-webkit-scrollbar{
+.taskPanel .right::-webkit-scrollbar {
     display: none;
 }
 
@@ -312,11 +315,11 @@ main {
     border-radius: 0.5rem;
 }
 
-.taskPanel .right .task .taskInfo h3 span.true{
+.taskPanel .right .task .taskInfo h3 span.true {
     display: block;
 }
 
-.taskPanel .right .task .taskInfo h3 span.false{
+.taskPanel .right .task .taskInfo h3 span.false {
     display: none;
 }
 
@@ -348,7 +351,7 @@ main {
 
 /* Daily Planner */
 
-.daily-planner-panel{
+.daily-planner-panel {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -361,7 +364,7 @@ main {
     scroll-behavior: smooth;
 }
 
-.dailyPlanner h4{
+.dailyPlanner h4 {
     font-family: font2;
     font-size: var(--font-size-sm);
     text-transform: uppercase;
@@ -369,11 +372,11 @@ main {
     margin-left: var(--padding-sm);
 }
 
-.daily-planner-panel::-webkit-scrollbar{
+.daily-planner-panel::-webkit-scrollbar {
     display: none;
 }
 
-.daily-planner-panel .plan{
+.daily-planner-panel .plan {
     display: flex;
     align-items: center;
     width: 49%;
@@ -381,7 +384,7 @@ main {
     margin-bottom: var(--padding-sm);
 }
 
-.daily-planner-panel .plan input{
+.daily-planner-panel .plan input {
     width: 100%;
     white-space: wrap;
     padding: 0 var(--padding-lg);
@@ -397,7 +400,7 @@ main {
     border-radius: 0.5rem;
 }
 
-.daily-planner-panel .plan h4{
+.daily-planner-panel .plan h4 {
     position: absolute;
     top: 15%;
     left: 2%;
@@ -408,11 +411,11 @@ main {
 }
 
 /* Motivational Quotes */
-.taskSection.motivationalSec{
+.taskSection.motivationalSec {
     position: relative;
 }
 
-.motivational-fullPage{
+.motivational-fullPage {
     height: 100%;
     width: 100%;
     display: flex;
@@ -420,7 +423,7 @@ main {
     align-items: center;
 }
 
-.motivational-fullPage .motivational-panel{
+.motivational-fullPage .motivational-panel {
     width: 50%;
     background-color: var(--quaternary-color);
     border-radius: 0.5rem;
@@ -431,7 +434,7 @@ main {
     justify-content: center;
 }
 
-.motivational-fullPage .motivational-panel::after{
+.motivational-fullPage .motivational-panel::after {
     position: absolute;
     content: '';
     height: 100%;
@@ -445,7 +448,7 @@ main {
 
 }
 
-.motivational-fullPage .motivational-panel .motivational-wrapper{
+.motivational-fullPage .motivational-panel .motivational-wrapper {
     position: absolute;
     z-index: 10;
     min-height: 100%;
@@ -455,7 +458,7 @@ main {
     padding: var(--padding-sm);
 }
 
-.motivational-fullPage .motivational-panel .motivational-wrapper img{
+.motivational-fullPage .motivational-panel .motivational-wrapper img {
     position: absolute;
     top: 4%;
     right: 5%;
@@ -463,7 +466,7 @@ main {
     scale: 1.2;
 }
 
-.motivation-1 h4{
+.motivation-1 h4 {
     font-family: font2;
     font-size: var(--font-size-sm);
     text-transform: uppercase;
@@ -475,7 +478,7 @@ main {
     border-radius: 3rem;
 }
 
-.motivation-2 h3{
+.motivation-2 h3 {
     font-family: font3;
     font-size: var(--font-size-lg);
     letter-spacing: 2px;
@@ -488,14 +491,14 @@ main {
     margin-top: var(--padding-md);
 }
 
-.motivation-3{
+.motivation-3 {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin-top: var(--padding-sm);
 }
 
-.motivation-3 h4{
+.motivation-3 h4 {
     font-family: font3;
     font-size: var(--font-size-sm);
     text-transform: uppercase;
@@ -505,4 +508,114 @@ main {
     color: var(--primary-color);
     padding: var(--padding-sm) var(--padding-md);
     border-radius: 0.5rem;
+}
+
+/* Pomodoro Timer */
+
+.pomodoro-fullPage .pomodoro-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.pomodoro-fullPage .pomodoro-panel #session-names {
+    width: 30vw;
+    height: 3vw;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pomodoro-fullPage .pomodoro-panel #session-names h4 {
+    width: 100%;
+    height: 100%;
+    font-family: font2;
+    font-size: var(--font-size-lg);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--padding-sm);
+    background: linear-gradient(to right, var(--tertiary-color), var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.pomodoro-fullPage .pomodoro-panel #session-names .session {
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+
+.break {
+    opacity: 0;
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToBottom {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.show {
+  animation: slideInFromTop 0.5s ease forwards;
+}
+
+.hide {
+  animation: slideOutToBottom 0.5s ease forwards;
+}
+
+.pomodoro-fullPage .pomodoro-panel #session-names h4 i {
+    margin-right: 0.5rem;
+    font-size: var(--font-size-lg);
+}
+
+.pomodoro-fullPage .pomodoro-panel h3 {
+    font-family: font3;
+    font-size: var(--font-size-xl);
+    letter-spacing: 5px;
+    margin-bottom: var(--padding-md);
+    background: conic-gradient(from 90deg, var(--tertiary-color), var(--primary-color), var(--quaternary-color), var(--tertiary-color));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.pomodoro-fullPage .pomodoro-panel button {
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: font2;
+    font-size: var(--font-size-sm);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-right: var(--padding-sm);
+    box-shadow: 0.2rem 0.2rem 0.5rem var(--tertiary-color);
+}
+
+.pomodoro-fullPage .pomodoro-panel button:active {
+    box-shadow: 0 0 0.2rem var(--primary-color);
+    transform: scale(0.95);
 }
