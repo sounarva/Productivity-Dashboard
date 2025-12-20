@@ -212,7 +212,7 @@ function pomodoroTimer() {
                     updateTimer()
                     toBreak()
                 }
-            }, 10)
+            }, 1000)
         } else {
             timerInterval = setInterval(() => {
                 if (totalSeconds > 0) {
@@ -225,7 +225,7 @@ function pomodoroTimer() {
                     updateTimer()
                     toWork()
                 }
-            }, 10)
+            }, 1000)
         }
     }
 
@@ -247,3 +247,41 @@ function pomodoroTimer() {
 }
 
 pomodoroTimer()
+
+// Date Time & Weather | Hero Panel
+function heroPanel() {
+    const WEATHER_API_KEY = "05cbce35efd74d01a0d51921252012"
+    const date = document.querySelector("#date")
+    const currentTime = document.querySelector("#currentTime")
+    const day = document.querySelector("#day")
+
+    const temp = document.querySelector("#temp")
+    const humidity = document.querySelector("#humidity")
+    const pressure = document.querySelector("#pressure")
+    const wind = document.querySelector("#windSpeed")
+
+
+    function updatingDateAndTime() {
+        const currentDate = new Date()
+        const dayName = currentDate.toLocaleDateString("en-US", { weekday: "long" }).split(",")[0]
+        day.innerHTML = dayName
+        date.innerHTML = currentDate.toLocaleDateString("en-US", { day: "numeric", month: "long", year: "numeric" })
+        currentTime.innerHTML = currentDate.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", second: "2-digit" })
+    }
+
+    async function fetchWeatherData() {
+        let response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=Bhatpara&aqi=no`)
+        let data = await response.json()
+        temp.innerHTML = `${data.current.temp_c}°C`
+        humidity.innerHTML = `Humidity : ${data.current.humidity}%`
+        pressure.innerHTML = `Pressure : ${data.current.pressure_mb} hPa`
+        wind.innerHTML = `Wind Speed : ${data.current.wind_kph} km/h`
+    }
+
+    updatingDateAndTime()
+    setInterval(updatingDateAndTime, 1000)
+
+    fetchWeatherData()
+}
+
+heroPanel()

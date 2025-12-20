@@ -12,25 +12,43 @@
 <body>
     <main>
         <section class="allElems">
-            <div id="0" class="elem todo">
-                <img src="./images/image-1.avif" alt="" loading="lazy">
-                <h2>Todo <br> List</h2>
-            </div>
-            <div id="1" class="elem dailyPlanner">
-                <img src="./images/image-2.avif" alt="" loading="lazy">
-                <h2>Daily <br> Planner</h2>
-            </div>
-            <div id="2" class="elem motivationSec">
-                <img src="./images/image-3.avif" alt="" loading="lazy">
-                <h2>Motivation <br> Quotes</h2>
-            </div>
-            <div id="3" class="elem pomodoro">
-                <img src="./images/image-4.avif" alt="" loading="lazy">
-                <h2>Pomodoro <br> Timer</h2>
-            </div>
-            <div id="4" class="elem goals">
-                <img src="./images/image-5.avif" alt="" loading="lazy">
-                <h2>Daily <br> Goals</h2>
+            <header>
+                <div class="header-video">
+                    <video src="./videos/nature-3.mp4" autoplay loop muted></video>
+                </div>
+                <div class="header-left">
+                    <h4 id="date">Dec 20 2025</h4>
+                    <h2 id="time"><span id="day">Saturday</span>, <span id="currentTime"></span></h2>
+                    <h3 id="location">Bhatpara , Kolkata</h3>
+                </div>
+                <div class="header-right">
+                    <h2 id="temp">25°C</h2>
+                    <h3 id="humidity">Humidity : 80%</h3>
+                    <h3 id="windSpeed">Wind Speed : 10 km/h</h3>
+                    <h3 id="pressure">Pressure : 1013 hPa</h3>
+                </div>
+            </header>
+            <div class="allFeatures">
+                <div id="0" class="elem todo">
+                    <img src="./images/image-1.avif" alt="" loading="lazy">
+                    <h2>Todo <br> List</h2>
+                </div>
+                <div id="1" class="elem dailyPlanner">
+                    <img src="./images/image-2.avif" alt="" loading="lazy">
+                    <h2>Daily <br> Planner</h2>
+                </div>
+                <div id="2" class="elem motivationSec">
+                    <img src="./images/image-3.avif" alt="" loading="lazy">
+                    <h2>Motivation <br> Quotes</h2>
+                </div>
+                <div id="3" class="elem pomodoro">
+                    <img src="./images/image-4.avif" alt="" loading="lazy">
+                    <h2>Pomodoro <br> Timer</h2>
+                </div>
+                <div id="4" class="elem goals">
+                    <img src="./images/image-5.avif" alt="" loading="lazy">
+                    <h2>Daily <br> Goals</h2>
+                </div>
             </div>
         </section>
 
@@ -66,7 +84,7 @@
             <h2>Motivation Quotes</h2>
             <button id="2" class="closePanel">Close</button>
             <div class="motivational-fullPage">
-                
+
                 <div class="motivational-panel">
                     <div class="motivational-wrapper">
                         <img src="./images/quote.png" alt="">
@@ -98,9 +116,9 @@
             </div>
         </section>
         <section id="4" class="taskSection goals">
-            <h2>Work Execution Plan</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus beatae voluptate exercitationem
-                autem hic consequuntur nemo veniam architecto incidunt distinctio.</p>
+            <h2>Daily Goals</h2>
+            <button id="4" class="closePanel">Close</button>
+            
         </section>
     </main>
 

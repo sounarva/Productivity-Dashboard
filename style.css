@@ -27,6 +27,7 @@
     --padding-sm: 1rem;
     --padding-md: 2rem;
     --padding-lg: 3rem;
+    --padding-xl: 6rem;
 
     /* Margins */
     --margin-sm: 1rem;
@@ -37,6 +38,7 @@
     --font-size-sm: 1rem;
     --font-size-md: 1.5rem;
     --font-size-lg: 2rem;
+    --font-size-lg-2: 4rem;
     --font-size-xl: 8rem;
 
     /* Font Weights */
@@ -71,11 +73,94 @@ main {
     width: 100%;
     padding: var(--padding-md);
     color: var(--quaternary-color);
+    position: absolute;
+}
+
+/* Hero Section */
+.allElems header {
+    padding: var(--padding-xl) var(--padding-md);
+    width: 100%;
+    border-radius: 0.5rem;
+    color: var(--quaternary-color);
+    margin-bottom: var(--margin-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.allElems header .header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.allElems header .header-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.allElems header .header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+.allElems header .header-left h4 {
+    font-family: font3;
+    font-size: var(--font-size-lg);
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-medium);
+}
+
+.allElems header .header-left h2 {
+    font-family: font2;
+    font-size: var(--font-size-lg-2);
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-medium);
+}
+
+.allElems header .header-left h3 {
+    font-family: font3;
+    font-size: var(--font-size-sm);
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-light);
+}
+
+.allElems header .header-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    z-index: 2;
+}
+
+.allElems header .header-right h2 {
+    font-family: font2;
+    font-size: var(--font-size-lg-2);
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-medium);
+}
+
+.allElems header .header-right h3 {
+    font-family: font3;
+    font-size: var(--font-size-sm);
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-light);
+}
+
+/* Features */
+
+.allElems .allFeatures {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
-    position: absolute;
 }
 
 .elem {
@@ -119,6 +204,8 @@ main {
     transform: scale(0.95);
 }
 
+/* Task Section */
+
 .taskSection {
     position: absolute;
     height: 100%;
@@ -129,6 +216,7 @@ main {
     padding: var(--padding-md);
     color: var(--quaternary-color);
     gap: var(--padding-md);
+    z-index: 2;
 }
 
 .taskSection h2 {
@@ -411,6 +499,7 @@ main {
 }
 
 /* Motivational Quotes */
+
 .taskSection.motivationalSec {
     position: relative;
 }
@@ -556,33 +645,35 @@ main {
 }
 
 @keyframes slideInFromTop {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideOutToBottom {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(100%);
-    opacity: 0;
-  }
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
 }
 
 .show {
-  animation: slideInFromTop 0.5s ease forwards;
+    animation: slideInFromTop 0.5s ease forwards;
 }
 
 .hide {
-  animation: slideOutToBottom 0.5s ease forwards;
+    animation: slideOutToBottom 0.5s ease forwards;
 }
 
 .pomodoro-fullPage .pomodoro-panel #session-names h4 i {
@@ -619,3 +710,5 @@ main {
     box-shadow: 0 0 0.2rem var(--primary-color);
     transform: scale(0.95);
 }
+
+/* Daily Goals */
