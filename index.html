@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productivity Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./images/android-chrome-192x192.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -118,7 +119,29 @@
         <section id="4" class="taskSection goals">
             <h2>Daily Goals</h2>
             <button id="4" class="closePanel">Close</button>
-            
+            <div class="goal-panel">
+                <div class="goal-panel-header">
+                    <div class="goal-panel-head-left">
+                        <h2>December 20 , 2025</h2>
+                        <h4>Saturday</h4>
+                    </div>
+                    <div class="goal-panel-head-right">
+                        <button class="goal-add"><i class="ri-add-large-line"></i></button>
+                    </div>
+                </div>
+                <div class="daily-goals">
+                </div>
+            </div>
+            <div class="goal-add-panel hide-form">
+                <div class="add-goal-form">
+                    <button id="closeGoalAddPanel"><i class="ri-close-large-line"></i></button>
+                    <input class="goalTitle" type="text" placeholder="Title">
+                    <input class="goalDesc" type="text" placeholder="Short description">
+                    <button id="add">
+                        Proceed
+                    </button>
+                </div>
+            </div>
         </section>
     </main>
 

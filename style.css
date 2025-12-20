@@ -712,3 +712,200 @@ main {
 }
 
 /* Daily Goals */
+/* .goals .goal-panel {
+    height: 55%;
+    width: 50%;
+    border: 1px solid var(--tertiary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.goals .goal-panel {
+    height: 55%;
+    width: 50%;
+    /* border: 3px solid var(--tertiary-color); */
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: linear-gradient(to bottom, var(--primary-color), var(--tertiary-color));
+    box-shadow: 0.3rem 0.3rem 1rem var(--secondary-color);
+}
+
+.goals .goal-panel .goal-panel-header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding-sm);
+}
+
+.goals .goal-panel .goal-panel-header .goal-panel-head-left h2 {
+    font-family: font2;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-lg);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.goals .goal-panel .goal-panel-header .goal-panel-head-left h4 {
+    font-family: font3;
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-md);
+    letter-spacing: 2px;
+}
+
+.goals .goal-panel .goal-panel-header .goal-panel-head-right button {
+    padding: var(--padding-sm);
+    border-radius: 50%;
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.goals .goal-panel .goal-panel-header .goal-panel-head-right button i {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    pointer-events: none;
+}
+
+.goals .goal-panel .goal-panel-header .goal-panel-head-right button:active {
+    transform: scale(0.95);
+}
+
+.goals .goal-panel .daily-goals {
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--padding-md);
+    margin-bottom: var(--padding-sm);
+    scroll-behavior: smooth;
+}
+
+.goals .goal-panel .daily-goals::-webkit-scrollbar{
+    display: none;
+}
+
+.goals .goal-panel .daily-goals .goal {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: 0.5rem;
+    margin-bottom: var(--padding-sm);
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.goals .goal-panel .daily-goals .no-goal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goals .goal-panel .daily-goals .no-goal h2 {
+    font-family: font2;
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-md);
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.goal-add-panel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.772);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+}
+
+.hide-form {
+    display: none;
+}
+
+.goal-add-panel .add-goal-form {
+    padding: var(--padding-md) var(--padding-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--padding-md);
+    border: 1px dashed var(--quaternary-color);
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.goal-add-panel .add-goal-form #closeGoalAddPanel{
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: fit-content;
+    padding: var(--padding-sm);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.goal-add-panel .add-goal-form input {
+    width: 100%;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    font-family: font2;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-md);
+    letter-spacing: 2px;
+    background-color: var(--secondary-color);
+}
+
+.goal-add-panel .add-goal-form button {
+    padding: var(--padding-sm) var(--padding-lg);
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    font-family: font3;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-sm);
+    background: linear-gradient(to right, var(--secondary-color), var(--tertiary-color));
+    width: 100%;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+.goal-add-panel .add-goal-form button:active {
+    transform: scale(0.90);
+}
+
+.show-form {
+    display: flex;
+    animation: slideInFromTop 0.7s ease-in-out forwards;
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

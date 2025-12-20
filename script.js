@@ -212,7 +212,7 @@ function pomodoroTimer() {
                     updateTimer()
                     toBreak()
                 }
-            }, 1000)
+            }, 10)
         } else {
             timerInterval = setInterval(() => {
                 if (totalSeconds > 0) {
@@ -225,7 +225,7 @@ function pomodoroTimer() {
                     updateTimer()
                     toWork()
                 }
-            }, 1000)
+            }, 10)
         }
     }
 
@@ -285,3 +285,94 @@ function heroPanel() {
 }
 
 heroPanel()
+
+// Daily Goals
+function dailyGoals() {
+
+    let goalsData = []
+
+    const goalAddBtn = document.querySelector(".goal-panel-head-right button")
+    const goalAddPanel = document.querySelector(".goal-add-panel")
+    const goalAddFormBtn = document.querySelector(".add-goal-form #add")
+    const goalCloseFormBtn = document.querySelector(".add-goal-form #closeGoalAddPanel")
+    const dailyGoals = document.querySelector(".goal-panel .daily-goals")
+    let goals = document.querySelectorAll(".goal-panel .daily-goals .goal")
+    const noGoal = document.querySelector(".goal-panel .daily-goals .no-goal")
+    const goalTitle = document.querySelector(".add-goal-form .goalTitle")
+    const goalDesc = document.querySelector(".add-goal-form .goalDesc")
+
+    if (localStorage.getItem("goalsData")) {
+        goalsData = JSON.parse(localStorage.getItem("goalsData"))
+    }
+
+    function renderGoals() {
+        dailyGoals.innerHTML = ""
+        if (goalsData.length === 0) {
+            dailyGoals.innerHTML = `<div class="no-goal">
+                    <h2>Goals are yet to be added</h2>
+                </div>`
+        } else {
+            let sum = ''
+            goalsData.forEach((goal, index) => {
+                sum += `<div id="${index}" class="goal">
+                        <h2>${goal.title}</h2>
+                        <p>${goal.desc}</p>
+                    </div>`
+            })
+            dailyGoals.innerHTML = sum
+
+            goals = document.querySelectorAll(".goal-panel .daily-goals .goal")
+
+            goals.forEach((goal, index) => {
+                if (goalsData[index].isCompleted) {
+                    goal.style.opacity = "0.5"
+                    goal.style.pointerEvents = "none"
+                }
+                goal.addEventListener("click", () => {
+                    goal.style.opacity = "0.5"
+                    goal.style.pointerEvents = "none"
+                    goalsData[index].isCompleted = true
+                    localStorage.setItem("goalsData", JSON.stringify(goalsData))
+                })
+            })
+        }
+    }
+
+    renderGoals()
+
+
+    function buttonFunctions() {
+
+        goalAddBtn.addEventListener("click", () => {
+            goalAddPanel.classList.remove("hide-form")
+            goalAddPanel.classList.add("show-form")
+        })
+
+        goalAddFormBtn.addEventListener("click", () => {
+            goalAddPanel.classList.remove("show-form")
+            goalAddPanel.classList.add("hide-form")
+
+            goalsData.push({
+                "title": goalTitle.value,
+                "desc": goalDesc.value,
+                "isCompleted": false
+            })
+
+            localStorage.setItem("goalsData", JSON.stringify(goalsData))
+
+            goalTitle.value = ""
+            goalDesc.value = ""
+            renderGoals()
+        })
+
+        goalCloseFormBtn.addEventListener("click", () => {
+            goalAddPanel.classList.remove("show-form")
+            goalAddPanel.classList.add("hide-form")
+        })
+    }
+
+    buttonFunctions()
+
+}
+
+dailyGoals()
